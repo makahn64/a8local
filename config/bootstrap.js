@@ -14,14 +14,20 @@ module.exports.bootstrap = async function () {
     sails.log.silly(`~~~~~ Node Environment: ${process.env.NODE_ENV} ~~~~~~`);
     sails.log.silly(`~~~~~ Sails Environment: ${sails.config.environment} ~~~~~~`);
 
-    if (sails.config.environment === 'developement') {
-        const testAdmin = User.findOrCreate({
-            email: 'admin@email.com',
-            firstName: "Admin",
-            lastName: "McRoot",
-            ring: 1,
-            blocked: false
-        })
+    if (sails.config.environment === 'development') {
+        const testAdmin = await User.findOne({email: "admin@email.com"});
+        if (!testAdmin){
+            sails.log.silly('Test admin not installed, installing');
+            const newUser = await User.create({
+                    firstName: "Admin",
+                    lastName: "McRoot",
+                    ring: 1,
+                    blocked: false,
+                    password: "pa$$word",
+                    email: "admin@email.com"
+                });
+            sails.log.silly(JSON.stringify(newUser));
+        }
     }
 
     // By convention, this is a good place to set up fake data during development.

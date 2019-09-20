@@ -17,7 +17,9 @@ module.exports.blueprints = {
   *                                                                          *
   ***************************************************************************/
 
-  // actions: false,
+  // We don't want all actions mounted willy-nilly. You get some weird errors from the bowels
+  // of Sails for actions defined in controllers/<subfolders>. Best to turn off and mount via routes.js.
+  actions: false,
 
 
   /***************************************************************************

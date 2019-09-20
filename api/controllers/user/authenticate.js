@@ -12,8 +12,8 @@ const bcrypt = require('bcrypt');
 
 module.exports = async (req, res) => {
 
-    const email = req.params('email');
-    const password = req.params('password');
+    const email = req.param('email');
+    const password = req.param('password');
     if (!email || !password) return res.badRequest({error: 'missing email and/or password'});
     const user = await User.findOne({email});
     if (!user) return res.forbidden({error: 'no such user'});
@@ -21,8 +21,12 @@ module.exports = async (req, res) => {
     if (!isLegit) return res.forbidden({error: 'bad password'});
 
     req.session.user = user;
-    req.session.isAuthenticated = true;
-    const response = {message: `Welcome, ${user.name}`};
+    req.session.authenticated = true;
+    req.session.sysadmin = user.ring === 1;
+
+    // wipe password
+    const {pwd, ...rest} = user;
+    const response = {message: `Welcome, ${user.email}`, user: rest};
     if (req.wantsJSON) {
         response.token = AuthService.makeJwt(user);
     }

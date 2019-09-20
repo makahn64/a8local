@@ -11,7 +11,9 @@ const withUUID = require('../../lib/models/withUUID');
 const processUserUpdates = async (values, proceed) => {
     if (values.email) values.email = values.email.toLowerCase();
     try {
-        values.password = await AuthService.hashPassword(values.password);
+        if (values.password){
+            values.password = await AuthService.hashPassword(values.password);
+        }
         proceed();
     } catch (err) {
         proceed(err); // probably never happen...
@@ -66,12 +68,9 @@ module.exports = withUUID({
             type: 'string'
         },
 
-        registeredAt: {
-            type: 'string'
-        },
-
         lastLoginAt: {
-            type: 'string'
+            type: 'string',
+            defaultsTo: new Date(0).toUTCString()
         }
 
     },
@@ -79,9 +78,11 @@ module.exports = withUUID({
     beforeCreate: processUserUpdates,
     beforeUpdate: processUserUpdates,
 
-    customToJSON:  () => {
+    // Do not use fat arrow here because of 'this' binding in core code!!!
+    customToJSON: function () {
         // Return a shallow copy of this record with the password removed.
-        return _.omit(this, ['password'])
+        const {password, ...rest} = this;
+        return rest;
     }
 
 });

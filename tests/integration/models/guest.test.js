@@ -17,7 +17,7 @@ describe('Guest Model', function () {
             expect(guest1.uuid).to.be.a("string");
             expect(guest1.registeredAt).to.be.a("string");
         })
-        it('should return a deifferent UUID for each guest', async () => {
+        it('should return a different UUID for each guest', async () => {
             expect(guest1.uuid).to.not.equal(guest2.uuid);
             expect(guest2.uuid).to.not.equal(guest3.uuid);
         })

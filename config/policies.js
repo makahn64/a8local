@@ -19,4 +19,7 @@ module.exports.policies = {
 
   // '*': true,
 
+  'test/any-authenticated-user': 'sessionAuth',
+  'test/sysadmin-only': ['sessionAuth', 'sysadminAuth']
+
 };
