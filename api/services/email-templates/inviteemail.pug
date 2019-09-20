@@ -1,0 +1,33 @@
+doctype html
+
+head
+    link(rel='stylesheet' href="https://fonts.googleapis.com/css?family=Dosis&display=swap")
+    style(type='text/css').
+        a {
+            color: #7e1623;
+            margin-bottom: 40px;
+            }
+        .card {
+            -webkit-box-shadow: 2px 1px 5px -1px rgba(161,161,161,1);
+            -moz-box-shadow: 2px 1px 5px -1px rgba(161,161,161,1);
+            box-shadow: 2px 1px 5px -1px rgba(161,161,161,1);
+            background-color: #ffffff;
+            border-radius: 3px;
+            color: #7f7f7f;
+            padding: 20px 20px 40px 20px;
+        }
+        .hl-text {
+            color: #8600ef;
+        }
+
+body( style="background-color:#efefef; font-size:1.5em; line-height: 2em; font-family: 'Dosis', sans-serif;")
+
+    div(style="width: 80%; margin: 0 auto;" class="card")
+        img(src=b64header style="width: 100%")
+        img(src=b64logo style="margin-top: 20px")
+        br
+        p(style={"margin-top": "2em"}) Hi there!
+        p You have been invited to join the <span class="hl-text">#{entityName}</span> #{entityType} at WineryXplorer.
+        p Follow the link below, and log in— or create an account tied to <b>this email address (#{email})</b>— and you can accept the invitation and get started!
+        p
+        a(href="https://www.wineryxplorer.com") Click here to login or join WineryXplorer

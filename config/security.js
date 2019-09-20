@@ -49,6 +49,8 @@ module.exports.security = {
   *                                                                           *
   ****************************************************************************/
 
-  // csrf: false
+  // csrf: false,
+
+  jwtSecret: 'activ8or_jwt'
 
 };

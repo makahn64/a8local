@@ -6,7 +6,8 @@ function cleanseThePalette() {
     const workQueue = [];
 
     workQueue.push(Guest.destroy({where: {'email': { contains: 'test.com'}}}).meta({enableExperimentalDeepTargets: true}));
-    // Add more cleansing as needed to workqueue
+    workQueue.push(User.destroy({where: {'email': { contains: 'test.com'}}}).meta({enableExperimentalDeepTargets: true}));
+// Add more cleansing as needed to workqueue
 
     return Promise.all(workQueue);
 
