@@ -6,6 +6,7 @@
  */
 
 const withUUID = require('../../lib/models/withUUID');
+const fs = require('fs').promises;
 
 module.exports = withUUID({
 
@@ -52,44 +53,25 @@ module.exports = withUUID({
 
     },
 
-    // TODO this needs to be seriously looked at
-    /**
-     * This method sends an array (contrary to docs), so it need to walk every item in the array.
-     */
-    afterDestroy: function (deletedRecords, next) {
+    afterDestroy: function (deletedMedia, next) {
 
-        sails.log.silly('Media afterDestroy ' + util.inspect(deletedRecords));
+        const {uuid, path} = deletedMedia;
 
-        function rmFile(record) {
+        sails.log.silly(`Remove file for media ${uuid}`);
 
-            return new Promise(function (fulfill, reject) {
-
-
-                let destinationFolder = require('path').resolve(sails.config.paths.media);
-
-                if (!record.path) fulfill();
-
-                // Make sure it's within our media path
-                else if (!_.startsWith(record.path, destinationFolder)) {
-                    fulfill();
-                } else {
-                    SkipperDisk().rm(record.path, function (err) {
-                        if (err) reject(err);
-                        else fulfill();
-                    });
-                }
-            });
+        async function doDelete(){
+            try {
+                await fs.unlink(path);
+                sails.log.silly(`Delete of ${path} confirmed`);
+            } catch (e) {
+                sails.log.error(`Delete of ${path} confirmed failed!`);
+                sails.log.error(e.message);
+            } finally {
+                next();
+            }
         }
 
-        function rmAllFiles(records) {
-            return Promise.all(records.map(rmFile));
-        }
-
-        rmAllFiles(deletedRecords).then(function (results) {
-            return next();
-        }, function (err) {
-            return next(new Error("destroy media path failed"));
-        });
+        doDelete();
 
     },
 

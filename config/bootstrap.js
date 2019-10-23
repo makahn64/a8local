@@ -9,7 +9,12 @@
  * https://sailsjs.com/config/bootstrap
  */
 
+const locator = require('../lib/locator');
+
 module.exports.bootstrap = async function () {
+
+    // Start the UDP Locator
+    locator.start();
 
     sails.log.silly(`~~~~~ Node Environment: ${process.env.NODE_ENV} ~~~~~~`);
     sails.log.silly(`~~~~~ Sails Environment: ${sails.config.environment} ~~~~~~`);
@@ -28,6 +33,15 @@ module.exports.bootstrap = async function () {
                 });
             sails.log.silly(JSON.stringify(newUser));
         }
+
+        await ExperienceConfig.findOrCreate({ key: 'BBH'}, { key: 'BBH', name: `Bob's Bouncy House`});
+        const exp1 = await Experience.create({ configKey: 'TNT', name: `Oktoberfest Tent`, metadata: { source: 'bootstrap1', demo: true}}).fetch();
+        const exp2 = await Experience.create({ configKey: 'BBH', metadata: { source: 'bootstrap2', demo: true}}).fetch();
+        const g = await Guest.findOrCreate({ email: 'guest-auto@test.com'}, { email: 'guest-auto@test.com',
+            firstName: 'Guest',
+            lastName: 'McActivated'});
+        await Experience.attachGuest(exp1.uuid, g.uuid);
+        await Experience.attachGuest(exp2.uuid, g.uuid);
     }
 
     // By convention, this is a good place to set up fake data during development.

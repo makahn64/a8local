@@ -8,6 +8,14 @@
 const withUUID = require('../../lib/models/withUUID')
 
 module.exports = withUUID({
-  attributes: {}
+  attributes: {},
+  beforeCreate: (values, proceed) => {
+    values.test = new Date().toUTCString();
+    proceed();
+  },
+  beforeUpdate: (values, proceed) => {
+    values.testUpdate = new Date().toUTCString();
+    proceed();
+  }
 });
 

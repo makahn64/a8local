@@ -15,10 +15,10 @@ module.exports = withUUID({
         //schema: true,
 
         email: {
-          type: 'string',
-          unique: true,
-          required: true,
-          isEmail: true
+            type: 'string',
+            unique: true,
+            required: true,
+            isEmail: true
         },
 
         firstName: {
@@ -37,12 +37,6 @@ module.exports = withUUID({
         },
 
         metadata: {
-            type: 'json',
-            defaultsTo: {}
-        },
-
-        //Added to keep synchronizer (uploader) info out of metadata which should be for the user
-        syncdata: {
             type: 'json',
             defaultsTo: {}
         },
@@ -87,8 +81,18 @@ module.exports = withUUID({
         },
 
         registeredAt: {
-          type: 'string'
+            type: 'string'
+        },
+
+        experiences: {
+            type: 'json',
+            defaultsTo: []
         }
+
+    },
+
+    populationSchema: {
+        experiences: { type: 'array', model: 'experience' }
     },
 
     // Lifecycle Callbacks

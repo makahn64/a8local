@@ -37,6 +37,16 @@ module.exports = withUUID({
       type: 'json'
     },
 
+    // photo of the activation for pretty UI
+    image: {
+      type: 'json'
+    },
+
+    // For whatever else we didn't consider
+    metadata: {
+      type: 'json',
+      defaultsTo: {}
+    }
 
   },
 

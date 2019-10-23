@@ -5,23 +5,24 @@
  * @docs        :: https://sailsjs.com/docs/concepts/models-and-orm/models
  */
 
+const moment = require('moment');
+
 module.exports = {
 
     attributes: {
 
-        experienceConfig: {
-            type: 'json',
+        experienceConfigKey: {
+            type: 'string',
             required: true
         },
 
-        metadata: {
-            type: 'json',
-            defaultsTo: {}
+        eperienceConfig: {
+            type: 'json'
         },
 
-        // Denormalized quest info
-        guest: {
-            type: 'json',
+        // UUID of guest
+        guestUUID: {
+            type: 'string',
             required: true
         },
 
@@ -40,7 +41,13 @@ module.exports = {
         hasBeenNotified: {
             type: 'boolean',
             defaultsTo: false
+        },
+
+        metadata: {
+            type: 'json',
+            defaultsTo: {}
         }
+
     },
 
     // /**
@@ -78,59 +85,26 @@ module.exports = {
 
 
     beforeCreate: function (values, cb) {
-
-        if (!values.enteredQueueAt) {
-            values.enteredQueueAt = new Date().toUTCString();
-        }
-
+        if (!values.enteredQueueAt) values.enteredQueueAt = new Date().toUTCString();
         cb();
-
     },
 
+    waitTime: function (queueEntry, format = 'milliseconds') {
+        const now = moment();
+        const entered = moment(queueEntry.enteredQueueAt);
+        return now.diff(entered, format);
+    },
 
-    // TODO move to helpers, put in controller
-    // /**
-    //  *
-    //  * Convenience method for counting entries in a Queue named [ xyz ]
-    //  * See: https://sailsjs-documentation.readthedocs.org/en/latest/concepts/Models/
-    //  *
-    //  * @param queueName: obvious
-    //  * @returns: promise
-    //  */
-    //
-    // countForQueueNamed: function (queueName) {
-    //
-    //     var query = {};
-    //
-    //     if (queueName) {
-    //         query = {queueName: queueName}
-    //     }
-    //
-    //     return Queue.find(query).then(
-    //         function (queue) {
-    //
-    //             var completed = 0;
-    //             var placeholders = 0;
-    //             queue.forEach(function (q) {
-    //                 if (q.resolution == 'placeholder') {
-    //                     placeholders++;
-    //                 } else if (q.completed) {
-    //                     completed++;
-    //                 }
-    //             });
-    //
-    //             //Yes, waiting can be computed by the client, but this is some convenience sugar [mak]
-    //             return {
-    //                 total: queue.length - placeholders,
-    //                 completed: completed,
-    //                 waiting: (queue.length - completed - placeholders)
-    //             };
-    //
-    //         }
-    //     );
-    //
-    // },
-    //
+    countForExperience: (experienceConfigKey, waitingOnly = true) => {
+        return QueueEntry.count({
+            where: {
+                experienceConfigKey: experienceConfigKey,
+                completedQueueAt: {'!=': !waitingOnly}
+            }
+        })
+    }
+
+
     // /**
     //  *
     //  * Convenience method for popping the oldest uncompleted entry in a Queue named [ xyz ]

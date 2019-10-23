@@ -130,3 +130,9 @@ lib-cov
 *.out
 *.pid
 
+# images uploaded
+assets/clientmedia/*.jpg
+assets/clientmedia/*.png
+assets/usermedia/*.jpg
+assets/usermedia/*.png
+
