@@ -135,4 +135,7 @@ assets/clientmedia/*.jpg
 assets/clientmedia/*.png
 assets/usermedia/*.jpg
 assets/usermedia/*.png
+# Docker mongo mount
+data
+a8docker
 

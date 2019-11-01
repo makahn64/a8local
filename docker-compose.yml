@@ -1,0 +1,25 @@
+version: "3"
+services:
+  a8local:
+    container_name: a8local
+    build: .
+    restart: always
+    ports:
+      - "1337:1337"
+    links:
+      - mongo
+    volumes:
+      - ./a8docker/config:/opt/a8/a8docker/config
+      - ./a8docker/assets:/opt/a8/assets
+  mongo:
+    #container_name: mongo
+    image: mongo
+    volumes:
+      - ./data:/data/db
+    ports:
+      - "27017:27017"
+  a8ui:
+    #container_name: a8uix
+    image: appdelegates/a8ui
+    ports:
+      - "8000:8000"

@@ -54,6 +54,11 @@ module.exports.routes = {
     'PATCH /guests/:guuid/experience': 'experience/upload-to-guest',
     'PATCH /guests/:guuid/experience/:euuid': 'experience/attach-to-guest',
     'DELETE /guests/:guuid/experience/:euuid': 'experience/remove-from-guest',
+    'POST /guests/:guuid/enqueue/:eKeyOrUuid': 'queueentry/enqueue-guest',
+    'POST /guests/:guuid/dequeue/:eKeyOrUuid': 'queueentry/dequeue-guest',
+    'GET /guests/:guuid/queueentries': 'queueentry/find-qentries-for-guest',
+    'GET /guests/:guuid/qentries': 'queueentry/find-qentries-for-guest',
+
 
     // ExperienceConfig
     'GET /experienceconfigs/:uuid': 'experienceConfig/find-experience-config-by-uuid',
@@ -71,6 +76,24 @@ module.exports.routes = {
     'GET /media/download/:id': 'media/media-download',
     'GET /media/:uuid': 'media/find-media-by-uuid',
     'DELETE /media/:uuid': 'media/delete-media-by-uuid',
-    'PATCH /media/:uuid': 'media/modify-media-by-uuid'
+    'PATCH /media/:uuid': 'media/modify-media-by-uuid',
+
+    // Settings
+    'GET /settings/:keyOrUuid': 'settings/find-settings',
+    'DELETE /settings/:keyOrUuid': 'settings/delete-settings',
+    'PUT /settings/:keyOrUuid': 'settings/modify-settings',
+    'GET /overlay': 'settings/overlay-test',
+
+    // Q Entries
+    'GET /queues/all' : 'queueentry/find-all-q-entries',
+
+    'GET /queueentry/:uuid': 'queueentry/find-qentry-by-uuid',
+    'DELETE /queueentry/:uuid': 'queueentry/delete-qentry-by-uuid',
+    'PATCH /queueentry/:uuid': 'queueentry/modify-qentry-by-uuid',
+    'PATCH /queueentry/:uuid/dequeue': 'queueentry/dequeue-qentry-by-uuid',
+    'PATCH /queueentry/:uuid/requeue': 'queueentry/re-enqueue-qentry-by-uuid',
+    // synonym
+    'PATCH /queueentry/:uuid/reenqueue': 'queueentry/re-enqueue-qentry-by-uuid'
+
 
 };

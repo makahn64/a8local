@@ -6,6 +6,8 @@
  */
 
 const withUUID = require('../../lib/models/withUUID');
+const isUUID = require('../../lib/models/isUUID');
+const DEFAULTS = require('../../lib/models/default-values').ExperienceConfig;
 
 module.exports = withUUID({
 
@@ -46,9 +48,19 @@ module.exports = withUUID({
     metadata: {
       type: 'json',
       defaultsTo: {}
+    },
+
+    queueConfig: {
+      type: 'json',
+      defaultsTo: DEFAULTS.queues
     }
 
   },
+
+  findOneByUuidOrKey: uuidOrKey => {
+    if (isUUID(uuidOrKey)) return ExperienceConfig.findOne({uuid: uuidOrKey});
+    return ExperienceConfig.findOne({key: uuidOrKey});
+  }
 
 });
 
