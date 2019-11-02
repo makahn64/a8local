@@ -6,4 +6,4 @@ permalink: /URL-PATH/
 
 # Use Cases
 
-## Case #1: Pre-Registration
+## Case #1: Pre-Registrations
