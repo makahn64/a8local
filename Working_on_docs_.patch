@@ -1,0 +1,16 @@
+Index: docs/USECASES.md
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- docs/USECASES.md	(date 1572716781000)
++++ docs/USECASES.md	(date 1572716963757)
+@@ -1,6 +1,8 @@
++---
+ layout: page
+ title: "PAGE TITLE"
+ permalink: /URL-PATH/
++---
+ 
+ # Use Cases
+ 
