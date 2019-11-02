@@ -84,7 +84,7 @@ Events include a date range, venue and name of the event. For example: "Widgetco
 June 4, 2023. The Event information can be used to customize any messages sent to Guests. More on this in the section on 
 Completions, below.
 
-[Typical Use Cases](docs/USECASES.md)
+[Typical Use Cases](./USECASES.md)
 
 
 
