@@ -64,7 +64,7 @@ release signatures.
 
 ### Data Object
 
-Data Objects are a simple Key/Value store that can be useful to networked experience developers. Data Objects can be subscribed to
+Data Objects are a generic Key/Value store that can be useful to networked experience developers. Data Objects can be subscribed to
 via SocketIO (as can other data types) for realtime data sharing between Experiences (think racing data in a VR racing game on multiple
 systems).
 
@@ -75,7 +75,16 @@ email services, email templates, and more.
 
 ### Users
 
-If security is turned on, then Users are entities with login rights to Activ8or.  
+If security is turned on, then Users are entities with login rights to Activ8or. Check out the section on security for more
+info.
+
+### Events
+
+Events include a date range, venue and name of the event. For example: "Widgetco's Monster Truck Experience" at "Sun Devil Stadium" on
+June 4, 2023. The Event information can be used to customize any messages sent to Guests. More on this in the section on 
+Completions, below.
+
+[Typical Use Cases](docs/USECASES.md)
 
 
 
