@@ -1,3 +1,5 @@
+# Introducing Activ8or
+
 Activ8or is a series of open-source apps and tools designed to simplify the implementation of interactive event marketing installations. Activ8or provides:
 - Guest registration.
 - Queueing and queue place notification via SMS and Email.
@@ -8,8 +10,6 @@ Activ8or is a series of open-source apps and tools designed to simplify the impl
 - Collection of statistics, demographic info, etc. for a given activation.
 - Suite of example applications such as tablet-based registration, scoreboards, digital signage and more.
 
-## bloops
-
 Activ8or is open source and fully documented. You can use it as is or add to it as you wish. Deployment is easy on any NodeJS-capable supported platform:
 
 - Mac and Linux OS systems including systems as inexpensive as Raspberry Pi and Wandboard.
@@ -17,17 +17,14 @@ Activ8or is open source and fully documented. You can use it as is or add to it 
 - Google Cloud Marketplace single click implementation (4Q2019).
 - A Dockerized implementation is available for testing and/or deployment.
 
-## Activ8or History, an Aside
+## Activ8or Components
 
-Activ8or was born of years of AppDelegates' development for the front and back-ends of Event Marketing installations. We've implemented
-systems in a variety of languages and on a variety of platforms. Common requirements came up in many, if not all, of these jobs: guest registration, 
-stats, experience completion (electronic and/or physical takeaway), leaderboards and more. We've done jobs where the back-end was in the 
-activation itself (especially with notoriously bad venue internet), where the back-end was in the cloud, or a mix of both (relay mode). Activ8or 
-implements everything we've learned over 10 years in interactive event development. We hope you like it and we hop you contribute to it!
+- **A8Local:** a NodeJS (based on SailsJS) server application that provides a REST API for Guest registration, logging Experiences, managing Queues, uploading Media, sending digital takeaways, etc.
+- **A8UI:** a React based UI for managing A8Local. A8UI allows you to add/manage Guests, Experiences, Queues and Media. It also shows basic reporting such as Guests-per-hour, sent emails, etc.
+- **Activ8or Sample Apps:** a suite of React and React-native apps for handling common digital experiential use cases. Included are a Guest Registration app for iPad/iPhone, a digital scoreboard and queue app aimed at 16:9 displays, and a Queueing app.
+- **Activ8or API Libraries**: initially ES6 Javascript which can be used for React, Angular, Vue, React Native and Ionic. We'll be offering native libs for Swift and Kotlin down the road a bit :). 
 
-
-xxx
-[Typical Use Cases](usecase.md)
+Activ8or components are all stand-alone. If you don't like our UI, roll your own. You don't like our apps, ditto. Want to write it in C? Go for it!
 
 
 
