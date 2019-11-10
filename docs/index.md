@@ -8,6 +8,8 @@ Activ8or is a series of open-source apps and tools designed to simplify the impl
 - Collection of statistics, demographic info, etc. for a given activation.
 - Suite of example applications such as tablet-based registration, scoreboards, digital signage and more.
 
+## bloops
+
 Activ8or is open source and fully documented. You can use it as is or add to it as you wish. Deployment is easy on any NodeJS-capable supported platform:
 
 - Mac and Linux OS systems including systems as inexpensive as Raspberry Pi and Wandboard.
