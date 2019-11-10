@@ -31,13 +31,13 @@ module.exports = withUUID({
             defaultsTo: ''
         },
 
-        // Array of denormalized guest objects.
+        // Array of guest UUIDs.
         guests: {
             type: 'json',
             defaultsTo: []
         },
 
-        // Array of denormalized media objects
+        // Array of media UUIDs
         media: {
             type: 'json',
             defaultsTo: []
