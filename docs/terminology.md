@@ -60,3 +60,11 @@ info.
 Events include a date range, venue and name of the event. For example: "Widgetco's Monster Truck Experience" at "Sun Devil Stadium" on
 June 4, 2023. The Event information can be used to customize any messages sent to Guests. More on this in the section on 
 Completions, below.
+
+### Digital "Takeaway" / Experience Completion
+
+Virtually every digital activation we have been in has concluded with an email or text being sent to the guest as a "takeway" of the experience.
+Often, these takeways have links to post to social media and embedded "guest has opened" trackers. Activ8or makes it straightforward
+to perform experience completion either on the local Activ8or server, or through a cloud hosted version.
+
+
