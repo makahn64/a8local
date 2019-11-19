@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang=" en"><head>
+ <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>REST API: Guests | Activ8or</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="REST API: Guests" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A suite of apps to handle the plumbing needs of interactive marketing installations." />
+<meta property="og:description" content="A suite of apps to handle the plumbing needs of interactive marketing installations." />
+<link rel="canonical" href="http://localhost:4000/rest-api-guests" />
+<meta property="og:url" content="http://localhost:4000/rest-api-guests" />
+<meta property="og:site_name" content="Activ8or" />
+<script type="application/ld+json">
+{"url":"http://localhost:4000/rest-api-guests","description":"A suite of apps to handle the plumbing needs of interactive marketing installations.","@type":"WebPage","headline":"REST API: Guests","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css">
+  <script src="/assets/javascript/bootstrap/jquery.min.js"></script>
+  <script src="/assets/javascript/bootstrap/bootstrap.bundle.min.js"></script>
+</head>
+<body><nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container">
+    <a class="navbar-brand" rel="author" href="/">Activ8or</a><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto"><li class="nav-item">
+          <a class="nav-link" href="https://github.com/makahn64/a8local">Fork me on Github</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="py-5">
+    <div class="container-fluid page-content">
+        <div class="row mw-100">
+            <div class="col-sm-4"><div id="accordion">
+    <div class="card mb-2">
+        <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+                <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Introduction
+                </button>
+            </h5>
+        </div>
+
+        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+            <div class="card-body">
+                <ul>
+                    <li><a href="index.html">Introducing Activ8or</a></li>
+                    <li><a href="a8history">Activ8or History: an Aside</a></li>
+                    <li><a href="terminology">Terminology</a></li>
+                    <li><a href="usecases">A Sampling of Use Cases</a></li>
+                    <li>Let's Have a Demo!</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="card mb-2">
+        <div class="card-header" id="headingTwo">
+            <h5 class="mb-0">
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Entities in Depth
+                </button>
+            </h5>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+            <div class="card-body">
+            It's a bag of fruit!
+            </div>
+        </div>
+    </div>
+    <!-- REST API -->
+    <div class="card mb-2">
+        <div class="card-header" id="headingREST">
+            <h5 class="mb-0">
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#restAPI"
+                        aria-expanded="false" aria-controls="restAPI">
+                    REST API
+                </button>
+            </h5>
+        </div>
+        <div id="restAPI" class="collapse" aria-labelledby="restAPI" data-parent="#accordion">
+            <div class="card-body">
+                <ul>
+                    <li><a href="rest-api-guests">Guests</a></li>
+                    <li><a href="rest-api-experience-config">Experience Config</a></li>
+                    <li><a href="rest-api-experiences">Experiences</a></li>
+                    <li><a href="rest-api-media">Media</a></li>
+                    <li><a href="rest-api-queues">Queues</a></li>
+                    <li><a href="rest-api-events">Events</a></li>
+                    <li><a href="rest-api-dataobjects">Data Objects</a></li>
+                    <li><a href="rest-api-settings">Settings</a></li>
+                    <li><a href="rest-api-users">Users</a></li>
+                    <hr/>
+                    <li><a href="rest-api-queryparams">Query Params in Detail</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- -->
+    <div class="card mb-2">
+        <div class="card-header" id="headingThree">
+            <h5 class="mb-0">
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Recipes
+                </button>
+            </h5>
+        </div>
+        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+            <div class="card-body">
+                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+            </div>
+        </div>
+    </div>
+    <div class="card mb-2">
+        <div class="card-header" id="headingFour">
+            <h5 class="mb-0">
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
+                    Deployment
+                </button>
+            </h5>
+        </div>
+        <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+            <div class="card-body">
+                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+            <div class="col-sm-8">
+                <article>
+  <section>
+    <h2 id="rest-api-guests">REST API: Guests</h2>
+<p>The <code class="language-plaintext highlighter-rouge">guests</code> endpoint provides CRUD operations for Guest entities.</p>
+
+<aside class="alert-light mb-3">
+<div class="container">
+<div class="row">
+<div class="col-12">
+<h6 class="mt-4">Summary of Endpoints</h6>
+    <ul>
+        <li><code>GET /guests</code></li>
+        <li><code>GET /guests/:uuid</code></li>
+        <li><code>POST /guests</code></li>
+        <li><code>PATCH /guests/:uuid</code></li>
+        <li><code>DELETE /guests/:uuid</code></li>
+        <li><code>PATCH /guests/:guuid/experience</code></li>
+        <li><code>PATCH /guests/:guuid/experience/:euuid</code></li>
+        <li><code>DELETE /guests/:guuid/experience/:euuid</code></li>
+        <li><code>POST /guests/:guuid/enqueue/:eKeyOrUuid</code></li>
+        <li><code>POST /guests/:guuid/dequeue/:eKeyOrUuid</code></li>
+        <li><code>GET /guests/:guuid/queueentries</code></li>
+        <li><code>GET /guests/:guuid/qentries</code></li>
+     </ul>
+    </div>
+</div>
+</div>
+</aside>
+
+<h2 id="get-guests">GET /guests</h2>
+<p>Returns all guests. Guests can be filtered per the query parameters.</p>
+
+<table class="table table-light">
+<tr>
+<td>Response Format</td>
+<td>JSON</td>
+</tr>
+<tr>
+<td>Requires Authentication?</td>
+<td>Only when security enabled</td>
+</tr>
+</table>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<p>Query parameters are passed in the URL. Example:</p>
+
+<p><code class="language-plaintext highlighter-rouge">GET /guests?orderBy="email ASC"&amp;limit=50</code></p>
+
+<table class="table table-striped">
+<thead>
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Required</th>
+        <th>Default Value</th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+        <td>email</td>
+        <td>Search for a specific email address</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>limit</td>
+        <td>Limit count of search results</td>
+        <td></td>
+        <td>10</td>
+    </tr>
+    <tr>
+        <td>object fields</td>
+        <td>Search for guests with matching object fields. See "Query Parameters".</td>
+        <td></td>
+        <td></td>
+    </tr>
+</tbody>
+</table>
+
+<h3 id="example-requests">Example Requests</h3>
+
+<p><code class="language-plaintext highlighter-rouge">GET /guests</code>
+<code class="language-plaintext highlighter-rouge">GET /guests?email=john.smith@test.com</code>
+<code class="language-plaintext highlighter-rouge">GET /guests?limit=10000</code></p>
+
+<h3 id="example-response">Example Response</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span>
+  <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">headshot</span><span class="dl">"</span><span class="p">:</span> <span class="p">{},</span>
+    <span class="dl">"</span><span class="s2">createdAt</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1572397517467</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">updatedAt</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1574185933176</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">id</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">5db8e1cd20dcb8a833781567</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">email</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">guest-auto@test.com</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">firstName</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Guest</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">middleName</span><span class="dl">"</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">lastName</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">McActivated</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">metadata</span><span class="dl">"</span><span class="p">:</span> <span class="p">{},</span>
+    <span class="dl">"</span><span class="s2">mobilePhone</span><span class="dl">"</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">legal</span><span class="dl">"</span><span class="p">:</span> <span class="p">{},</span>
+    <span class="dl">"</span><span class="s2">address</span><span class="dl">"</span><span class="p">:</span> <span class="p">{},</span>
+    <span class="dl">"</span><span class="s2">demographics</span><span class="dl">"</span><span class="p">:</span> <span class="p">{},</span>
+    <span class="dl">"</span><span class="s2">avatar</span><span class="dl">"</span><span class="p">:</span> <span class="p">{},</span>
+    <span class="dl">"</span><span class="s2">signature</span><span class="dl">"</span><span class="p">:</span> <span class="p">{},</span>
+    <span class="dl">"</span><span class="s2">registeredAt</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Wed, 30 Oct 2019 01:05:17 GMT</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">experiences</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span>
+      <span class="dl">"</span><span class="s2">a9cdfc65-0608-4a5f-a010-1eb3d5332652</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">14f9d70a-7981-4064-af4c-8101770a63e6</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">96678dcf-b70f-41a2-b838-d0254e1820d3</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">6b0861e9-ec53-40ef-b18e-f0bf6ca26749</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">568cba70-9a84-4bb6-88f8-1086d54d74f3</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">5dad3c1b-59e2-493d-bd68-e2ba81a9b9cb</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">8a7b3f65-5e7a-47fe-9d68-b8e2ca1e13b8</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">b19d5125-c0d5-4229-b530-cd5930cc10bd</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">3384e89c-0033-48c2-9a13-2fae833ba43b</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">ff8890fc-3a78-4694-9c99-704d0f1b7a2f</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">bc40cb74-4f8e-43e3-bef5-743eb393ccb0</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">12a1ea59-c438-4903-a56a-00dbe7d6c4e6</span><span class="dl">"</span>
+    <span class="p">],</span>
+    <span class="dl">"</span><span class="s2">uuid</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">d5eb580a-ec07-4489-97c2-ad5103bdefe6</span><span class="dl">"</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">headshot</span><span class="dl">"</span><span class="p">:</span> <span class="p">{},</span>
+    <span class="dl">"</span><span class="s2">createdAt</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1572397535175</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">updatedAt</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1572397535175</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">id</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">5db8e1df20dcb8a833781568</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">email</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">rhea.kuphal@demotest.com</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">firstName</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Rhea</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">middleName</span><span class="dl">"</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">lastName</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Kuphal</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">metadata</span><span class="dl">"</span><span class="p">:</span> <span class="p">{},</span>
+    <span class="dl">"</span><span class="s2">mobilePhone</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">(503) 050-7516 x673</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">legal</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+      <span class="dl">"</span><span class="s2">signedRelease</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span>
+    <span class="p">},</span>
+    <span class="dl">"</span><span class="s2">address</span><span class="dl">"</span><span class="p">:</span> <span class="p">{},</span>
+    <span class="dl">"</span><span class="s2">demographics</span><span class="dl">"</span><span class="p">:</span> <span class="p">{},</span>
+    <span class="dl">"</span><span class="s2">avatar</span><span class="dl">"</span><span class="p">:</span> <span class="p">{},</span>
+    <span class="dl">"</span><span class="s2">signature</span><span class="dl">"</span><span class="p">:</span> <span class="p">{},</span>
+    <span class="dl">"</span><span class="s2">registeredAt</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Wed, 30 Oct 2019 01:05:35 GMT</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">experiences</span><span class="dl">"</span><span class="p">:</span> <span class="p">[],</span>
+    <span class="dl">"</span><span class="s2">uuid</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">6e778d3e-5d93-48ed-8e3d-d789ee29e31a</span><span class="dl">"</span>
+  <span class="p">},</span>
+<span class="p">...</span>
+<span class="p">]</span>
+</code></pre></div></div>
+<hr />
+
+<h2 id="get-guestsuuid">GET /guests/:uuid</h2>
+<p>Returns a single guest matching the <code class="language-plaintext highlighter-rouge">uuid</code>.</p>
+
+<table class="table table-light">
+<tr>
+<td>Response Format</td>
+<td>JSON</td>
+</tr>
+<tr>
+<td>Requires Authentication?</td>
+<td>Only when security enabled</td>
+</tr>
+</table>
+
+<h3 id="query-parameters-1">Query Parameters</h3>
+
+<p>None</p>
+
+<h3 id="example-request">Example Request</h3>
+
+<p><code class="language-plaintext highlighter-rouge">GET /guests/d5eb580a-ec07-4489-97c2-ad5103bdefe6</code></p>
+
+<h3 id="example-response-1">Example Response</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
+  <span class="dl">"</span><span class="s2">headshot</span><span class="dl">"</span><span class="p">:</span> <span class="p">{},</span>
+  <span class="dl">"</span><span class="s2">createdAt</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1572397517467</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">updatedAt</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1574185933176</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">id</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">5db8e1cd20dcb8a833781567</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">email</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">guest-auto@test.com</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">firstName</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Guest</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">middleName</span><span class="dl">"</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">lastName</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">McActivated</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">metadata</span><span class="dl">"</span><span class="p">:</span> <span class="p">{},</span>
+  <span class="dl">"</span><span class="s2">mobilePhone</span><span class="dl">"</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">legal</span><span class="dl">"</span><span class="p">:</span> <span class="p">{},</span>
+  <span class="dl">"</span><span class="s2">address</span><span class="dl">"</span><span class="p">:</span> <span class="p">{},</span>
+  <span class="dl">"</span><span class="s2">demographics</span><span class="dl">"</span><span class="p">:</span> <span class="p">{},</span>
+  <span class="dl">"</span><span class="s2">avatar</span><span class="dl">"</span><span class="p">:</span> <span class="p">{},</span>
+  <span class="dl">"</span><span class="s2">signature</span><span class="dl">"</span><span class="p">:</span> <span class="p">{},</span>
+  <span class="dl">"</span><span class="s2">registeredAt</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Wed, 30 Oct 2019 01:05:17 GMT</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">experiences</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="dl">"</span><span class="s2">createdAt</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1572397517418</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">updatedAt</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1572397517484</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">id</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">5db8e1cd20dcb8a833781565</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">name</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Oktoberfest Tent</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">configKey</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">TNT</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">config</span><span class="dl">"</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">event</span><span class="dl">"</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">guests</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="dl">"</span><span class="s2">d5eb580a-ec07-4489-97c2-ad5103bdefe6</span><span class="dl">"</span>
+      <span class="p">],</span>
+      <span class="dl">"</span><span class="s2">media</span><span class="dl">"</span><span class="p">:</span> <span class="p">[],</span>
+      <span class="dl">"</span><span class="s2">completed</span><span class="dl">"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">metadata</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="dl">"</span><span class="s2">source</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">bootstrap1</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">demo</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span>
+      <span class="p">},</span>
+      <span class="dl">"</span><span class="s2">completionsLog</span><span class="dl">"</span><span class="p">:</span> <span class="p">[],</span>
+      <span class="dl">"</span><span class="s2">experiencedAt</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Wed, 30 Oct 2019 01:05:17 GMT</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">uuid</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">a9cdfc65-0608-4a5f-a010-1eb3d5332652</span><span class="dl">"</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="dl">"</span><span class="s2">uuid</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">d5eb580a-ec07-4489-97c2-ad5103bdefe6</span><span class="dl">"</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<hr />
+
+<h2 id="post-guests">POST /guests</h2>
+<p>Creates a single guest with the values passed in the POST body.</p>
+
+<table class="table table-light">
+<tr>
+<td>Response Format</td>
+<td>JSON</td>
+</tr>
+<tr>
+<td>Requires Authentication?</td>
+<td>Only when security enabled</td>
+</tr>
+</table>
+
+<h3 id="post-body-parameters">POST Body Parameters</h3>
+
+<table class="table table-striped">
+<thead>
+    <tr>
+        <th>Field Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Required</th>
+        <th>Default Value</th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+        <td>email</td>
+        <td><pre>string</pre> must be valid email address</td>
+        <td>Email address. Must be unique or an error is returned.</td>
+        <td>YES</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>firstName</td>
+        <td><pre>string</pre></td>
+        <td>First name of Guest</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>middleName</td>
+        <td><pre>string</pre></td>
+        <td>Middle name/initial of Guest</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>lastName</td>
+        <td><pre>string</pre></td>
+        <td>Last name of Guest</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>mobilePhone</td>
+        <td><pre>string</pre></td>
+        <td>Mobile phone number Guest</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>legal</td>
+        <td><pre>json</pre></td>
+        <td>Free-form JSON data reserved for legal releases, etc.</td>
+        <td></td>
+        <td><pre>{}</pre></td>
+    </tr>
+    <tr>
+        <td>address</td>
+        <td><pre>json</pre></td>
+        <td>Free-form physical address data for guest.</td>
+        <td></td>
+        <td><pre>{}</pre></td>
+    </tr>
+    <tr>
+        <td>demographics</td>
+        <td><pre>json</pre></td>
+        <td>Free-form demographic data for guest.</td>
+        <td></td>
+        <td><pre>{}</pre></td>
+    </tr>
+    <tr>
+        <td>avatar</td>
+        <td><pre>json</pre></td>
+        <td>JSON Media object to use as avatar.</td>
+        <td></td>
+        <td><pre>{}</pre></td>
+    </tr>
+    <tr>
+        <td>signature</td>
+        <td><pre>json</pre></td>
+        <td>JSON Media object to use as Guest signature. Normally used for legal release.</td>
+        <td></td>
+        <td><pre>{}</pre></td>
+    </tr>
+    <tr>
+        <td>registeredAt</td>
+        <td><pre>string</pre></td>
+        <td>ISO time string for the time at which the Guest registered.</td>
+        <td></td>
+        <td>Server time of POST</td>
+    </tr>
+    <tr>
+        <td>experiences</td>
+        <td><pre>json array</pre></td>
+        <td>Array of Experience UUIDs for this Guest. This field is not normally updated directly. There are convenience methods for these operations.</td>
+        <td></td>
+        <td>[ ]</td>
+    </tr>
+</tbody>
+</table>
+
+<h3 id="example-request-1">Example Request</h3>
+
+<p><code class="language-plaintext highlighter-rouge">POST /guests</code>
+<br />
+Body:
+<br />
+<code class="language-plaintext highlighter-rouge">{"firstName" : "Tester", "lastName": "McTestface", "email":"testguest@test.com"}</code></p>
+
+<h3 id="example-response-2">Example Response</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
+  <span class="dl">"</span><span class="s2">createdAt</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1574186973207</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">updatedAt</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1574186973207</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">id</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">5dd42fdd898ba6493939db43</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">email</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">testguest@test.com</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">firstName</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Tester</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">middleName</span><span class="dl">"</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">lastName</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">McTestface</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">metadata</span><span class="dl">"</span><span class="p">:</span> <span class="p">{},</span>
+  <span class="dl">"</span><span class="s2">mobilePhone</span><span class="dl">"</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">legal</span><span class="dl">"</span><span class="p">:</span> <span class="p">{},</span>
+  <span class="dl">"</span><span class="s2">address</span><span class="dl">"</span><span class="p">:</span> <span class="p">{},</span>
+  <span class="dl">"</span><span class="s2">demographics</span><span class="dl">"</span><span class="p">:</span> <span class="p">{},</span>
+  <span class="dl">"</span><span class="s2">avatar</span><span class="dl">"</span><span class="p">:</span> <span class="p">{},</span>
+  <span class="dl">"</span><span class="s2">signature</span><span class="dl">"</span><span class="p">:</span> <span class="p">{},</span>
+  <span class="dl">"</span><span class="s2">registeredAt</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Tue, 19 Nov 2019 18:09:33 GMT</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">experiences</span><span class="dl">"</span><span class="p">:</span> <span class="p">[],</span>
+  <span class="dl">"</span><span class="s2">uuid</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">dc59d3d7-06c4-46b4-bd5c-b39850933b45</span><span class="dl">"</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<hr />
+
+<h2 id="patch-guestsuuid">PATCH /guests/:uuid</h2>
+<p>Modify a single guest with the values passed in the POST body.</p>
+
+<table class="table table-light">
+<tr>
+<td>Response Format</td>
+<td>JSON</td>
+</tr>
+<tr>
+<td>Requires Authentication?</td>
+<td>Only when security enabled</td>
+</tr>
+</table>
+
+<h3 id="post-body-parameters-1">POST Body Parameters</h3>
+
+<p>Same as POST parameters.</p>
+
+<h3 id="example-request-2">Example Request</h3>
+
+<p><code class="language-plaintext highlighter-rouge">PATCH /guests</code>
+<br />
+Body:
+<br />
+<code class="language-plaintext highlighter-rouge">{"lastName": "McTestface Jr", metatdata: { "namechange": true }}</code></p>
+
+<h3 id="example-response-3">Example Response</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
+  <span class="dl">"</span><span class="s2">createdAt</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1574186973207</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">updatedAt</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1574186980093</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">id</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">5dd42fdd898ba6493939db43</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">email</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">testguest@test.com</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">firstName</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Tester</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">middleName</span><span class="dl">"</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">lastName</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">McTestface Jr.</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">metadata</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span> <span class="dl">"</span><span class="s2">namechange</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span> <span class="p">},</span>
+  <span class="dl">"</span><span class="s2">mobilePhone</span><span class="dl">"</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">legal</span><span class="dl">"</span><span class="p">:</span> <span class="p">{},</span>
+  <span class="dl">"</span><span class="s2">address</span><span class="dl">"</span><span class="p">:</span> <span class="p">{},</span>
+  <span class="dl">"</span><span class="s2">demographics</span><span class="dl">"</span><span class="p">:</span> <span class="p">{},</span>
+  <span class="dl">"</span><span class="s2">avatar</span><span class="dl">"</span><span class="p">:</span> <span class="p">{},</span>
+  <span class="dl">"</span><span class="s2">signature</span><span class="dl">"</span><span class="p">:</span> <span class="p">{},</span>
+  <span class="dl">"</span><span class="s2">registeredAt</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Tue, 19 Nov 2019 18:09:33 GMT</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">experiences</span><span class="dl">"</span><span class="p">:</span> <span class="p">[],</span>
+  <span class="dl">"</span><span class="s2">uuid</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">dc59d3d7-06c4-46b4-bd5c-b39850933b45</span><span class="dl">"</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<hr />
+
+
+  </section>
+</article>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="py-5 border-top">
+  <div class="container">
+
+    <p class="h5 mb-3">Activ8or</p>
+
+    <div class="row">
+
+      <div class="col-sm">
+        <ul class="list-unstyled">
+          <li>Activ8or</li><li>
+              <a href="mailto:activ8or@appdelegates.com">
+                activ8or@appdelegates.com
+              </a>
+            </li></ul>
+      </div>
+
+
+      <div class="col-sm text-right">
+        <p>A suite of apps to handle the plumbing needs of interactive marketing installations.</p>
+
+        <p>
+          <a href="https://nicolas-van.github.io/bootstrap-4-github-pages/">Powered by Bootstrap 4 Github Pages</a>
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+</body>
+
+</html>

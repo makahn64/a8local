@@ -64,12 +64,6 @@ module.exports = withUUID({
             defaultsTo: {}
         },
 
-        //denormalized media object inserted here
-        headshot: {
-            type: 'json',
-            defaultsTo: {}
-        },
-
         avatar: {
             type: 'json',
             defaultsTo: {}
