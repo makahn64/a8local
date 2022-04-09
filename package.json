@@ -14,7 +14,7 @@
     "fs-extra": "^8.1.0",
     "jsonwebtoken": "^8.5.1",
     "local-ipv4-address": "0.0.2",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "nodemailer": "^6.3.0",
     "nodemailer-sendinblue-transport": "^1.2.3",
     "pug": "^2.0.4",
